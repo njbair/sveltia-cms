@@ -81,7 +81,7 @@ export const parseEntryFile = async ({
   const customParser = get(customFileFormats)[format]?.parser;
 
   if (customParser) {
-    return customParser(text);
+    return customParser(text, { path });
   }
 
   try {
