@@ -59,7 +59,7 @@ export const formatEntryFile = async ({
   const customFormatter = get(customFileFormats)[format]?.formatter;
 
   if (customFormatter) {
-    return `${(await customFormatter(content)).trim()}\n`;
+    return `${(await customFormatter(content, { path })).trim()}\n`;
   }
 
   try {
